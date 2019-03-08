@@ -1,0 +1,26 @@
+@function rem($px){//$px为需要转换的字号
+  @return $px / 75 * 1rem;
+}
+
+.tab {
+  width: rem(650);
+  margin: 0 auto;
+  overflow: hidden;
+
+  th, td {
+    padding: rem(10) rem(20);
+    font-size: rem(30);
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+
+    p {
+      width: rem(187);
+      line-height: 1.4em;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+    }
+  }
+}

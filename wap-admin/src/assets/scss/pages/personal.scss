@@ -1,0 +1,57 @@
+@function rem($px){//$px为需要转换的字号
+  @return $px / 75 * 1rem;
+}
+
+.logo {
+  display: block;
+  width: rem(300);
+  margin: rem(100) auto;
+}
+
+.table {
+  width: rem(650);
+  margin: 0 auto;
+
+  .tr {
+    margin-bottom: rem(20);
+
+    .tit {
+      width: rem(227);
+      font-size: rem(30);
+      padding: 11px;
+      line-height: inherit;
+      text-align: right;
+    }
+
+    .content {
+      width: rem(422);
+    }
+  }
+}
+
+.error{
+
+  .ipt::after {
+    border-color: red!important;
+  }
+}
+
+.bot {
+
+  .btn {
+    width: rem(200);
+    text-align: center;
+    line-height: 1.4em;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 3px;
+    font-size: rem(30);
+    background-color: #ccc;
+    font-weight: bold;
+
+    &.active {
+      background-color: #fc9153;
+      color: #fff;
+    }
+  }
+}

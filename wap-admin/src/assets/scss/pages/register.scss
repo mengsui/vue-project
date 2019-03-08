@@ -1,0 +1,31 @@
+@function rem($px){//$px为需要转换的字号
+  @return $px / 75 * 1rem;
+}
+
+.content {
+
+  .error{
+
+    .ipt::after {
+      border-color: red!important;
+    }
+  }
+
+  .logo {
+    display: block;
+    width: rem(400);
+    margin: rem(200) auto rem(100);
+  }
+
+  .ipt {
+    width: rem(600);
+    margin: 0 auto rem(40);
+  }
+
+  .submit {
+    width: rem(300);
+    margin: 0 auto;
+    background-color: #f40;
+    border-radius: rem(10);
+  }
+}

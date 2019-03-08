@@ -1,0 +1,9 @@
+@function rem($px){//$px为需要转换的字号
+  @return $px / 75 * 1rem;
+}
+
+.logo {
+  display: block;
+  width: rem(300);
+  margin: rem(100) auto;
+}

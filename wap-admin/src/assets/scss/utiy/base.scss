@@ -1,0 +1,144 @@
+/* 公共样式 */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  background-color: #fff;
+  font-family: '微软雅黑', 'Microsoft Yahei';
+  color: #222;
+  -webkit-font-smoothing: antialiased;
+}
+
+i {
+  font-style: normal;
+}
+
+a {
+  color: #222;
+}
+
+img {
+  border-style: none;
+}
+
+a:hover,
+a:active,
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+span {
+  display: inline-block;
+}
+
+input,
+select {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+
+select:focus {
+  outline: 0 none;
+}
+
+textarea {
+  border: none;
+  background-color: transparent;
+  height: auto;
+  outline: none;
+  resize: none;
+  padding: 0;
+}
+
+/* 清除浮动 */
+
+.fd-clr:after {
+  content: "";
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+
+.fd-clr {
+  *zoom: 1;
+}
+
+/* 部分文件的公共样式 */
+
+.f-l {
+  float: left;
+}
+
+.f-r {
+  float: right;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #999;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #999;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #999;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #999;
+}

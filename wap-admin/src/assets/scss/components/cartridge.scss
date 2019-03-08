@@ -1,0 +1,73 @@
+@function rem($px){//$px为需要转换的字号
+  @return $px / 75 * 1rem;
+}
+
+.content {
+  width: rem(650);
+  margin: 0 auto;
+  color: #fff;
+  padding-top: rem(200);
+
+  .tr {
+    margin-bottom: rem(20);
+
+    .tit {
+      text-align: right;
+      width: rem(227);
+      font-size: rem(30);
+      padding: 11px;
+      line-height: inherit;
+    }
+
+    .ipt {
+      width: rem(422);
+    }
+
+    //人员搜索
+    .transport {
+      position: relative;
+
+      .vague {
+        position: absolute;
+        left: 0;
+        top: 40px;
+        z-index: 4;
+        width: 100%;
+        color: #000;
+        line-height: 1.4em;
+        background-color: #ccc;
+      }
+    }
+
+    .unit-cy {
+
+      li {
+        padding: 10px;
+        position: relative;
+
+        .close {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+      }
+    }
+  }
+
+  .bot {
+    text-align: center;
+
+    p {
+      width: rem(200);
+      text-align: center;
+      line-height: 1.4em;
+      margin: rem(60) auto 0;
+      padding: 10px;
+      border-radius: 3px;
+      font-size: rem(30);
+      background-color: #fc9153;
+      color: #fff;
+      font-weight: bold;
+    }
+  }
+}
