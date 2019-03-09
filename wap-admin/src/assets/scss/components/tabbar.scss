@@ -1,0 +1,10 @@
+@function rem($px){//$px为需要转换的字号
+  @return $px / 75 * 1rem;
+}
+
+.tabbar {
+
+  img {
+    width: rem(50);
+  }
+}

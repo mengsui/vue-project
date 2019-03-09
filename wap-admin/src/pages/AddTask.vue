@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Tabbar/>
     <img class="logo" src="http://www.saoxiankeji.com/img/shibie.png">
     <div class="table">
       <div class="tr fd-clr">
@@ -124,8 +125,10 @@
       </div>
     </div>
 
+    <!-- 底部导航 -->
+    <Toolbar :index="1"/>
 
-
+    <!-- 小单元弹框 -->
     <div v-if="unittk" class="unittk">
       <Cartridge :saveFun="saveFun"/>
     </div>
@@ -152,11 +155,15 @@ const dateSegmentData = [
 ];
 
 import Cartridge from '../components/Cartridge'
+import Toolbar from '../components/Toolbar'
+import Tabbar from '../components/Tabbar'
 
 export default {
   name: 'detail',
   components: {
-    Cartridge
+    Cartridge,
+    Toolbar,
+    Tabbar,
   },
   data(){
     return {

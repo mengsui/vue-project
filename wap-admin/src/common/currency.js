@@ -53,7 +53,6 @@ export default ({
   /**
    * 项目状态数据类型转换
    * @param state 当前状态
-   * @param field 要修改的字段
    */
   projectStatus: function(state) {
     switch (Number(state)) {
@@ -72,6 +71,10 @@ export default ({
         break;
     };
   },
+  /**
+   * 项目状态数据类型转换
+   * @param val 当前状态
+   */
   backProjectStatus: function(val) {
     switch (val) {
       case '中断关闭':
@@ -88,5 +91,13 @@ export default ({
         console.log("数据错误："+state);
         break;
     };
+  },
+  /**
+   * 项目状态数据类型转换
+   * @param 时间 当前状态格式为：2017-1-1
+   */
+  handleTime: function(val) {
+    const time = val.split('-');
+    return new Date(time[0], Number(time[1]) - 1, time[2], 0, 0, 0).getTime();
   }
 })

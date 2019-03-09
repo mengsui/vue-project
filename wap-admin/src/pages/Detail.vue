@@ -94,12 +94,11 @@
               :indicator="false"
               :disabled="djsmall.nub == nub ? djsmall.bl : true"/>
             <p class="unit-title">单元状态</p>
-            <p @click="showPicker">{{item.stateturn}}</p>
-            <!-- <cube-select
+            <cube-select
               v-model="item.stateturn"
               @change="projectStatusChange"
               :options="['中断关闭','计划中','执行中','已完成','暂停中']"
-              :disabled="djsmall.nub == nub ? djsmall.bl : true"/> -->
+              :disabled="djsmall.nub == nub ? djsmall.bl : true"/>
 
             <p class="unit-title">单元描述</p>
             <cube-textarea
@@ -149,14 +148,6 @@ const dateSegmentData = [
     min: new Date(2000, 0, 1),
     max: new Date(2030, 11, 31)
   }
-];
-//小单元状态选择['中断关闭','计划中','执行中','已完成','暂停中']
-const column1 = [
-  { text: '中断关闭', value: '-1'},
-  { text: '计划中', value: '0' },
-  { text: '执行中', value: '1' },
-  { text: '已完成', value: '2' },
-  { text: '暂停中', value: '3' }
 ];
 
 import Cartridge from '../components/Cartridge'
@@ -259,36 +250,17 @@ export default {
     });
   },
   methods: {
-    showPicker() {
-      if (!this.picker) {
-        this.picker = this.$createPicker({
-          title: '状态',
-          data: [column1],
-          onSelect: this.selectHandle,
-        })
-      }
-      this.picker.show()
-    },
-    selectHandle(selectedVal, selectedIndex, selectedText) {
+    projectStatusChange(sele,index,text){
       const self = this;
-      console.log(self.djsmall.nub)
-      console.log(selectedVal, selectedIndex, selectedText);
-      self.task.unit[ self.djsmall.nub ].state = selectedVal[0];
-      self.task.unit[ self.djsmall.nub ].stateturn = selectedText[0];
+      self.task.unit[self.djsmall.nub].state = index - 1;
+      this.$forceUpdate();
     },
-    // projectStatusChange(sele,index,text){
-    //   const self = this;
-    //   self.task.unit[self.djsmall.nub].state = index - 1;
-    //   console.log(sele,index,text,self.djsmall.nub)
-    //   console.log(this.$createPicker)
-    //   console.log(this.updatePropsPicker)
-    //   console.log(11)
-    // },
     showDateSegmentPicker() {//日历选择
       if(!this.disabled){//禁止
         this.dateSegmentPicker.show();
       }
     },
+
     btn(){//修改信息
       const self = this;
       self.disabled = !self.disabled;

@@ -2,6 +2,8 @@
   <div>
     <img class="logo" src="http://www.saoxiankeji.com/img/logo-1-03.png">
     <div class="table">
+      <Cropper/>
+
       <div class="tr fd-clr">
         <div class="tit f-l">昵称：</div>
         <div class="content f-l">
@@ -109,8 +111,13 @@
   </div>
 </template>
 <script>
+import Cropper from '../components/Cropper'
+
 export default {
   name: 'super',
+  components: {
+    Cropper,
+  },
   data() {
     return {
       mid: '',//用户的唯一标示
@@ -150,7 +157,10 @@ export default {
         self.disabled = false;
       };
       self.iptJudge(function(){
-        console.log('昵称：'+self.title, '姓名：'+self.name, '用户类型：'+self.vipturn + '：'+self.vip, '手机号:'+self.phone, '邮箱：'+self.mail, '岗位：'+self.post, '密码：'+self.pass)
+        if(self.disabled){
+          alert('保存成功！')
+          console.log('昵称：'+self.title, '姓名：'+self.name, '用户类型：'+self.vipturn + '：'+self.vip, '手机号:'+self.phone, '邮箱：'+self.mail, '岗位：'+self.post, '密码：'+self.pass)
+        }
       });
     },
     iptJudge(fn){//判断当前是否全部填写 fn == 全部正确填写回调

@@ -9,7 +9,7 @@
       </tr>
       <tr :key="nub" v-for="(item, nub) in handleUser">
         <td>
-          <p @click="superClick(item)">{{item.name}}</p>
+          <p class="name" @click="superClick(item)">{{item.name}}</p>
         </td>
         <td class="user">
           {{item.vip}}
@@ -22,11 +22,19 @@
         </td>
       </tr>
     </table>
+
+    <!-- 底部导航 -->
+    <Toolbar :index="3"/>
   </div>
 </template>
 <script>
+import Toolbar from '../components/Toolbar'
+
 export default {
   name: 'admin',
+  components: {
+    Toolbar,
+  },
   data() {
     return {
       userArr: ['高级用户', '普通用户'],

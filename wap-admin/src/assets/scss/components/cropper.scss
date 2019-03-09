@@ -1,3 +1,36 @@
 @function rem($px){//$px为需要转换的字号
   @return $px / 75 * 1rem;
 }
+
+.content {
+  text-align: center;
+}
+
+.cube-upload {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+
+  .cube-upload-file {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 999;
+  }
+
+  i{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+    font-size: 32px;
+    line-height: 1;
+    font-style: normal;
+    color: #fff;
+    background-color: #333;
+    border-radius: 50%;
+  }
+}

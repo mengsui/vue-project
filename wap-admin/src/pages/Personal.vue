@@ -2,6 +2,7 @@
   <div>
     <img class="logo" src="http://www.saoxiankeji.com/img/shibie.png">
     <div class="table">
+      <Cropper/>
       <div class="tr fd-clr">
         <div class="tit f-l">昵称：</div>
         <div class="content f-l">
@@ -82,6 +83,8 @@
       <p @click="subClick()" class="btn active">保存</p>
     </div>
 
+    <Toolbar :index="2"/>
+
     <cube-popup type="my-popup" ref="elastic">
       手机号格式错误
     </cube-popup>
@@ -91,8 +94,15 @@
   </div>
 </template>
 <script>
+import Cropper from '../components/Cropper'
+import Toolbar from '../components/Toolbar'
+
 export default {
   name: 'personal',
+  components: {
+    Cropper,
+    Toolbar,
+  },
   data() {
     return {
       mid: '',//当前用户唯一标示
