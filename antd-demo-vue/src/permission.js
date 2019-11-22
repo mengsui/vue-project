@@ -50,7 +50,12 @@ router.beforeEach((to, from, next) => {
         next('/manage')
         NProgress.done()
       } else {
-        next();
+        /**
+          * 这里应该使用 next() 如果后台没有处理token超时返回的解构问题，前端强制跳转的登陆页面
+        */
+        // next();
+        Vue.ls.clear();
+        next('/manage/login');
       }
     };
   } else {

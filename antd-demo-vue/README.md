@@ -1,6 +1,5 @@
 [项目说明](http://note.youdao.com/noteshare?id=adb746edfa3ee241aa1b10d7c1b243f7)
 ### 待完善功能
-  - [ ]  路由跳转页面title设置
   - [ ]  测试工具
   - [ ]  国际化资源
 
