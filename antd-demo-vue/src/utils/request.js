@@ -13,7 +13,7 @@ const service = axios.create({
 
 /**
  * 服务器 status 错误处理
- * status == 403提示
+ * status == 403 提示
 */
 const err = (error) => {
   if (error.response) {
