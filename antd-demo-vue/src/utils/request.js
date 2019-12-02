@@ -62,7 +62,7 @@ service.interceptors.request.use(config => {
       }];
     };
   } else {
-    config.headers['Content-Type'] = 'application/json';
+    config.headers['Content-Type'] = 'application/x-www-form-urlencoded';
     defaultData = {
       ...defaultData,
       ...config.data,
